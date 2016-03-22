@@ -1,0 +1,47 @@
+﻿<Window x:Class="SuffixTreeTest.KernelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:my="clr-namespace:SuffixTreeTest"
+        Title="Kernel computation" Height="200" Width="300">
+	<Window.CommandBindings>
+		<CommandBinding Command="{x:Static my:KernelWindow.ComputeCommand}" Executed="ExecuteCompute" />
+	</Window.CommandBindings>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Label Grid.Column="0" Grid.Row="0">Input string</Label>
+			<TextBox Grid.Column="1" Grid.Row="0" Name="inputTextBox" 
+							 Text="{Binding InputString}" />
+			<Label Grid.Column="0" Grid.Row="1">Kernel value</Label>
+			<TextBox Grid.Column="1" Grid.Row="1" Name="kernelTextBox" 
+							 IsReadOnly="True" Background="AliceBlue"
+							 Text="{Binding KernelValue}" />
+		</Grid>
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Button x:Name="computeButton" 
+							Grid.Column="1" IsDefault="True"
+							Command="{x:Static my:KernelWindow.ComputeCommand}">Compute</Button>
+			<Button x:Name="closeButton" 
+							Grid.Column="2" IsCancel="True">Close</Button>
+		</Grid>
+	</Grid>
+</Window>

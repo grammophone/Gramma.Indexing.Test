@@ -1,0 +1,59 @@
+﻿<Window x:Class="SuffixTreeTest.TreeTypePickWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:my="clr-namespace:SuffixTreeTest"
+				xmlns:common="clr-namespace:Gramma.Windows;assembly=Gramma.Windows"
+        Title="Pick a radix tree type" Height="200" Width="300">
+	<Window.CommandBindings>
+		<CommandBinding Command="{x:Static my:CommonCommands.OkCommand}" Executed="ExecutedOk" />
+		<CommandBinding Command="{x:Static my:CommonCommands.CancelCommand}" Executed="ExecuteCancel" />
+	</Window.CommandBindings>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<GroupBox Header="Choose tree type" BorderBrush="LightBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+			<StackPanel Orientation="Vertical">
+				<common:BoundRadioButton x:Name="suffixTreeRadioButton" 
+																 RadioBinding="{Binding Path=TreeType}" 
+																 RadioValue="{x:Static my:TreeTypeEnum.SuffixTree}"
+																 GroupName="treeTypeGroup">Suffix tree</common:BoundRadioButton>
+				<common:BoundRadioButton x:Name="wordTreeRadioButton" 
+																 RadioBinding="{Binding Path=TreeType}" 
+																 RadioValue="{x:Static my:TreeTypeEnum.WordTree}"
+																 GroupName="treeTypeGroup">Word tree</common:BoundRadioButton>
+				<common:BoundRadioButton x:Name="kernelSuffixTreeRadioButton" 
+																 RadioBinding="{Binding Path=TreeType}" 
+																 RadioValue="{x:Static my:TreeTypeEnum.KernelSuffixTree}"
+																 GroupName="treeTypeGroup">Kernel suffix tree</common:BoundRadioButton>
+			</StackPanel>
+		</GroupBox>
+		<Label Grid.Row="1" IsEnabled="{Binding ElementName=kernelSuffixTreeRadioButton, Path=IsChecked}">Exponent</Label>
+		<TextBox x:Name="exponentTextBox" Grid.Row="1" Grid.Column="1" 
+						 Text="{Binding Path=Exponent}"
+						 IsEnabled="{Binding ElementName=kernelSuffixTreeRadioButton, Path=IsChecked}"/>
+		<Grid Grid.Row="3" Grid.ColumnSpan="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Button x:Name="okButton" 
+							Grid.Column="1" IsDefault="True" 
+							Command="{x:Static my:CommonCommands.OkCommand}">Ok</Button>
+			<Button x:Name="cancelButton" 
+							Grid.Column="2" IsCancel="True" 
+							Command="{x:Static my:CommonCommands.CancelCommand}">Cancel</Button>
+		</Grid>
+	</Grid>
+</Window>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="SuffixTreeTest.MatchingStatisticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:my="clr-namespace:SuffixTreeTest"
+        Title="Matching Statistics" Height="300" Width="300">
+	<Window.Resources>
+		<my:MatchingSubstringConverter x:Key="matchingSubstringConverter" />
+	</Window.Resources>
+	<Window.CommandBindings>
+		<CommandBinding Command="{x:Static my:MatchingStatisticsWindow.ExecuteCommand}" Executed="ExecuteExecuted" CanExecute="CanExecuteExecute" />
+	</Window.CommandBindings>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<TextBox Name="wordTextBox" Grid.Column="0" Grid.Row="0" TabIndex="0" />
+			<Button Grid.Column="1" Grid.Row="0" Content="Execute" Name="executeButton"
+							Command="{x:Static my:MatchingStatisticsWindow.ExecuteCommand}" TabIndex="1" />
+		</Grid>
+		<ListView Grid.Row="1" Name="listView" ItemsSource="{Binding}" TabIndex="2">
+			<ListView.View>
+				<GridView>
+					<GridView.Columns>
+						<GridViewColumn Header="Suffix index" DisplayMemberBinding="{Binding WordOffset}" Width="80" />
+						<GridViewColumn Header="Match length" DisplayMemberBinding="{Binding Length}" Width="80" />
+						<GridViewColumn Header="Substring" Width="80">
+							<GridViewColumn.DisplayMemberBinding>
+								<MultiBinding Converter="{StaticResource matchingSubstringConverter}">
+									<Binding />
+									<Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=my:MatchingStatisticsWindow}" Path="CurrentWord" />
+								</MultiBinding>
+							</GridViewColumn.DisplayMemberBinding>
+						</GridViewColumn>
+					</GridView.Columns>
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
+</Window>

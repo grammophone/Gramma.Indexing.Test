@@ -1,0 +1,71 @@
+﻿<Window x:Class="SuffixTreeTest.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:my="clr-namespace:SuffixTreeTest"
+        Title="Search preferences" Height="300" Width="300">
+	<Window.Resources>
+		<my:CharArrayConverter x:Key="charArrayConverter" />
+		<my:TypeNameConverter x:Key="typeNameConverter" />
+	</Window.Resources>
+	<Window.CommandBindings>
+		<CommandBinding Command="{x:Static my:SearchWindow.SearchCommand}" CanExecute="CanExecuteSearch" Executed="ExecuteSearch" />
+	</Window.CommandBindings>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<GroupBox Header="Search options" DataContext="{Binding Options}">
+			<Grid Grid.Row="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Label Grid.Row="0" Grid.Column="0">_Word</Label>
+				<TextBox Grid.Row="0" Grid.Column="1" Name="wordTextBox">
+					<TextBox.Text>
+						<Binding Path="Word">
+						</Binding>
+					</TextBox.Text>
+				</TextBox>
+				<Label Grid.Row="1" Grid.Column="0">_Maximum edit distance</Label>
+				<TextBox Grid.Row="1" Grid.Column="1" Name="maxDistanceTextBox">
+					<TextBox.Text>
+						<Binding Path="MaxDistance" ValidatesOnExceptions="True">
+						</Binding>
+					</TextBox.Text>
+				</TextBox>
+			</Grid>
+		</GroupBox>
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Button x:Name="searchButton" 
+							Grid.Column="1" IsDefault="True"
+							Command="{x:Static my:SearchWindow.SearchCommand}">Search</Button>
+			<Button x:Name="closeButton" 
+							Grid.Column="2" IsCancel="True">Close</Button>
+		</Grid>
+		<ListView Grid.Row="2" Name="resultsListView" ItemsSource="{Binding Results}">
+			<ListView.View>
+				<GridView>
+					<GridView.Columns>
+						<GridViewColumn Header="Match" DisplayMemberBinding="{Binding Match, Converter={StaticResource charArrayConverter}}" Width="120" />
+						<GridViewColumn Header="Edit distance" DisplayMemberBinding="{Binding EditDistance}" Width="80" />
+					</GridView.Columns>
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
+</Window>
