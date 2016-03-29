@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SuffixTreeTest
+namespace Gramma.Indexing.Test
 {
 	/// <summary>
 	/// Interaction logic for TreeTypePickWindow.xaml

@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace SuffixTreeTest
+namespace Gramma.Indexing.Test
 {
 	/// <summary>
 	/// Helpers for binding and validation.

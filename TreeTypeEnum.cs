@@ -1,4 +1,4 @@
-﻿namespace SuffixTreeTest
+﻿namespace Gramma.Indexing.Test
 {
 	public enum TreeTypeEnum
 	{

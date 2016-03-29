@@ -6,7 +6,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using Gramma.Indexing;
 
-namespace SuffixTreeTest
+namespace Gramma.Indexing.Test
 {
 	public class MatchingSubstringConverter : IValueConverter, IMultiValueConverter
 	{

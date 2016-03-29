@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Gramma.Indexing;
 
-namespace SuffixTreeTest
+namespace Gramma.Indexing.Test
 {
 	/// <summary>
 	/// Interaction logic for MatchingStatisticsWindow.xaml

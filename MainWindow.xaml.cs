@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using Gramma.Indexing;
 using Gramma.Indexing.KernelWeightFunctions;
 
-namespace SuffixTreeTest
+namespace Gramma.Indexing.Test
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 
-namespace SuffixTreeTest
+namespace Gramma.Indexing.Test
 {
 	public class TypeNameConverter : IValueConverter
 	{
