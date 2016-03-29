@@ -140,11 +140,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Components\Gramma.Indexing\Gramma.Indexing.csproj">
+    <ProjectReference Include="..\Gramma.Indexing\Gramma.Indexing.csproj">
       <Project>{937A024F-5DC5-4CA6-864E-BF5D9CB2E039}</Project>
       <Name>Gramma.Indexing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Components\Gramma.Windows\Gramma.Windows.csproj">
+    <ProjectReference Include="..\Gramma.Windows\Gramma.Windows.csproj">
       <Project>{AA54CC84-38DE-479F-BFFB-6AACE06524C5}</Project>
       <Name>Gramma.Windows</Name>
     </ProjectReference>
