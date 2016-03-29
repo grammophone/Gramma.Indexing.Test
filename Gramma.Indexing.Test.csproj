@@ -8,8 +8,8 @@
     <ProjectGuid>{79088B16-44E4-4FA8-9DF5-F782B5BEC4AA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuffixTreeTest</RootNamespace>
-    <AssemblyName>SuffixTreeTest</AssemblyName>
+    <RootNamespace>Gramma.Indexing.Test</RootNamespace>
+    <AssemblyName>Gramma.Indexing.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
