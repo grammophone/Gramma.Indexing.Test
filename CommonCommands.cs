@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace Gramma.Indexing.Test
+namespace Grammophone.Indexing.Test
 {
 	public static class CommonCommands
 	{

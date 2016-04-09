@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 using System.Windows.Markup;
-using Gramma.Indexing;
+using Grammophone.Indexing;
 
-namespace Gramma.Indexing.Test
+namespace Grammophone.Indexing.Test
 {
 	public class MatchingSubstringConverter : IValueConverter, IMultiValueConverter
 	{

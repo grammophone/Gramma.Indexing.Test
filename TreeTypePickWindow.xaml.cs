@@ -11,9 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using Gramma.Windows;
+using Grammophone.Windows;
 
-namespace Gramma.Indexing.Test
+namespace Grammophone.Indexing.Test
 {
 	/// <summary>
 	/// Interaction logic for TreeTypePickWindow.xaml

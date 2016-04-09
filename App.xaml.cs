@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace Gramma.Indexing.Test
+namespace Grammophone.Indexing.Test
 {
 	/// <summary>
 	/// Interaction logic for App.xaml

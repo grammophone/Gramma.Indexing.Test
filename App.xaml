@@ -1,4 +1,4 @@
-﻿<Application x:Class="Gramma.Indexing.Test.App"
+﻿<Application x:Class="Grammophone.Indexing.Test.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">

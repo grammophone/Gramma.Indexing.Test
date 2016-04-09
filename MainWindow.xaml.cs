@@ -11,10 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Gramma.Indexing;
-using Gramma.Indexing.KernelWeightFunctions;
+using Grammophone.Indexing;
+using Grammophone.Indexing.KernelWeightFunctions;
 
-namespace Gramma.Indexing.Test
+namespace Grammophone.Indexing.Test
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
